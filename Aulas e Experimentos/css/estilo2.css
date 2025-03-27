@@ -1,0 +1,21 @@
+body{
+    background-color: pink;
+}
+.titulo{
+    /* background-color: black; */
+    text-align: center;
+}
+
+p{
+    font-size: 32px;
+    background-color: brown;
+    color: bisque;
+}
+
+.destaque p{
+    font-size: 50px;
+}
+
+.destaque p:hover{
+    background-color: yellow;    
+}

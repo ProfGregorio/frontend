@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MENU</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            @font-face {
+                font-family: mk1;
+                src: url(../css/fonts/mortal_kombat/mk1.ttf);
+            }
+            @font-face {
+                font-family: mk2;
+                src: url(../css/fonts/mortal_kombat/mk2.ttf);
+            } 
+            @font-face {
+                font-family: mk4;
+                src: url(../css/fonts/mortal_kombat/MK4.TTF);
+            }
+            @font-face {
+                font-family: mk5;
+                src: url(../css/fonts/mortal_kombat/mk5style.ttf);
+            }   
+            @font-face {
+                font-family: mkda;
+                src: url(../css/fonts/mortal_kombat/mkda.ttf);
+            }
+            @font-face {
+                font-family: mkmyth;
+                src: url(../css/fonts/mortal_kombat/mkmyth.ttf);
+            }                                          
+
+            body{height: 100vh;}
+            .content{
+                display: flex;
+                gap: 50px;
+            }
+            .menu {
+                background-color: purple;
+                display: flex;
+                height: -webkit-fill-available;
+                width: 200px;
+                
+            }
+            .menu ul{
+                width: 100%;
+                background-color: yellowgreen;                
+                list-style: none;
+                margin:0;
+                display: flex;
+                flex-direction: column;
+                gap:20px;
+                text-align: center;
+            }
+            .menu ul li{
+                background-color: red;
+                font-size: x-large;
+                padding: 10px 0;
+            }
+            h1,h2,h3,h4,h5,h6{
+                font-size: 50pt;
+                margin: 20px 0;
+                background: #B97841;
+                background: linear-gradient(to bottom, #B97841 0%, #000700 50%, #CF1512 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;                
+            }
+            h1{
+                font-family: mk1;
+            }
+            h2{
+                font-family: mk2;
+            } 
+            h3{
+                font-family: mk4;
+            }
+            h4{
+                font-family: mk5;
+            }     
+            h5{
+                font-family: mkda;
+            }
+            h6{
+                font-family: mkmyth;
+            }     
+            /* https://www.alura.com.br/artigos/css-animacoes-com-transitions-animations     */
+            .slidein {
+  -moz-animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -moz-animation-name: slidein;
+  -webkit-animation-name: slidein;
+  animation-name: slidein;
+  -moz-animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3;
+  -moz-animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-moz-keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+        </style>   
+    </head>
+    <body >
+        <div class="content">
+        <nav class="menu"> 
+            <ul>
+                <li><a href="#">Link1</a>
+                <li><a href="#">Link2</a>
+                <li><a href="#">Link3</a>
+                <li><a href="#">Link4</a>
+                <li><a href="#">Link5</a>
+                <li><a href="#">Link6</a>
+            </ul>
+        </nav>
+        <section>
+            <h1>Mortal Kombat</h1>
+            <hr>
+            <h2>Mortal Kombat</h2>
+            <hr>
+            <h3>Mortal Kombat</h3>
+            <hr>
+            <h4>Mortal Kombat</h4>
+            <hr>
+            <h5>Mortal Kombat</h5>
+            <hr>
+            <h6>Mortal Kombat</h6>
+        </section>
+  
+          
+        </div>
+        <p class="slidein"> 
+            A Lagarta e Alice olharam-se por algum tempo em silêncio: finalmente, a
+            Lagarta tirou o narguilé da boca e dirigiu-se a ela com uma voz lânguida e
+            sonolenta.
+          </p>
+    </body>
+</html>

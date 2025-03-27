@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>TESTE DISPLAY NONE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body{
+                background-color: pink;
+            }
+    
+            .principal {
+            background-color: blue;
+            display: inline-block; /* Adicionei para conter melhor as partes */
+            }
+            .principal .parte {
+                border: 3px solid #000;
+                width: 250px;
+                height: 250px;
+                background-color: yellow;
+                animation-duration: 4s;
+                transition: all 0.1s ease-in-out;                
+
+            }
+            .principal a{
+                color: #000;
+                background-color: #fff;
+            }
+            .principal .parte1{
+                opacity: 1;                
+            }
+            .principal .parte2 {
+                background-color: red;
+                display: none;
+                opacity: 0;               
+            }
+
+            .principal .parte1:hover {
+                display: none;  
+             }
+            .principal .parte1:hover + .parte2 {
+                opacity: 1;
+                display: block;
+            }
+            /* .principal:hover .parte2 {
+                opacity: 1;
+                visibility: visible;
+            } */
+
+        </style>
+    </head>
+
+        <section class="principal">
+            <section class="parte parte1">
+                <a href="#">
+                    TESTE LINK 1
+                </a>
+            </section>
+            <section class="parte parte2">
+                <a href="#">
+                    TESTE LINK 2
+                </a>    
+            </section>
+        </section>
+
+    </body>
+</html>

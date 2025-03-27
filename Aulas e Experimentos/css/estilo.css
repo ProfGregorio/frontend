@@ -1,0 +1,64 @@
+body{
+    background-color: pink;
+    background-image: url('../img/hellokit.png');
+}
+.titulo{
+    /* background-color: black; */
+    text-align: center;
+}
+img {
+    max-width: 250px;
+    background-color: yellowgreen;
+}
+h1{
+    background-color: yellow;  
+    width: 80%;
+    display: inline-block;
+    vertical-align: baseline;
+    padding:10px;
+}
+h1:hover{
+    background-color: blue;    
+}
+.logo{
+    border:0px; width: 33px; 
+    vertical-align: sub;
+}
+p {
+    background-color: aquamarine;
+    color:brown;
+    font-size: larger;
+}
+img{
+    border:30px solid yellow;
+}
+a{
+    background-color: black;
+    color: pink; font-size: large;
+}
+
+.principal{
+    background-color:red;
+    color:white ;
+    font-size: 35px;
+}
+
+.crismessi{
+    background-color: blue;
+    background-image: url('../img/cristiano-ronaldo-durante-jogo-entre-portugal-e-franca-pela-eurocopa-1720210162298_v2_1x1.jpg');
+    background-size: cover;
+    width: 350px;
+    height: 250px;
+}
+
+.crismessi:hover{
+    background-color: blue;
+    background-image: url('../img/messi.jfif');
+    background-size: cover;
+    width: 350px;
+    height: 250px;
+}
+
+p{
+    font-size: 32px;
+}
