@@ -1,0 +1,63 @@
+https://alistapart.com/article/responsive-web-design/
+
+
+.hero-wide .post-thumbnail {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (max-width: 1400px) {
+    .hero-wide .post-thumbnail {
+        background-image: url(/wp-content/uploads/2019/05/rwd-2_1400_761_81.jpg);
+        padding-top: calc(761 / 1400 * 100%);
+    }
+}
+
+@media (max-width: 1400px) and (min-resolution: 2dppx) {
+    .hero-wide .post-thumbnail {
+        background-image: url(/wp-content/uploads/2019/05/rwd-2_2049_1114_81.jpg);
+    }
+}
+
+.hero-wide .post-thumbnail {
+    background-image: url(/wp-content/uploads/2019/05/rwd-2_1400_761_81.jpg);
+    padding-top: calc( 761 / 1400 * 100% );
+}
+
+
+@media (max-width: 450px) and (min-resolution: 2dppx) {
+    .hero-wide .post-thumbnail {
+        background-image: url(/wp-content/uploads/2019/05/rwd-4_1362_2227_81.jpg);
+    }
+}
+@media (max-width: 450px) {
+    .hero-wide .post-thumbnail {
+        background-image: url(/wp-content/uploads/2019/05/rwd-4_450_736_81.jpg);
+        /* padding-top: calc(736 / 450 * 100%); */
+        height: 315px;
+    }
+}
+
+@media (max-width: 960px) and (min-resolution: 2dppx) {
+    .hero-wide .post-thumbnail {
+        background-image: url(/wp-content/uploads/2019/05/rwd-3_1500_1078_81.jpg);
+    }
+}
+@media (max-width: 960px) {
+    .hero-wide .post-thumbnail {
+        background-image: url(/wp-content/uploads/2019/05/rwd-3_960_690_81.jpg);
+        padding-top: calc(690 / 960 * 100%);
+    }
+}
+@media (max-width: 1400px) and (min-resolution: 2dppx) {
+    .hero-wide .post-thumbnail {
+        background-image: url(/wp-content/uploads/2019/05/rwd-2_2049_1114_81.jpg);
+    }
+}
+@media (max-width: 1400px) {
+    .hero-wide .post-thumbnail {
+        background-image: url(/wp-content/uploads/2019/05/rwd-2_1400_761_81.jpg);
+        padding-top: calc(761 / 1400 * 100%);
+    }
+}

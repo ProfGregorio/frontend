@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/*
+	Nome: Estilo da Home 
+	Data: 15/01/2017
+	Descrição:  Versão inicial. 
+	Versão: 0.1
+	Autor: Gregorio
+	Autor URI:  www.gregmaster.com.br
+*/
+
+			*{
+				margin: 0;
+				padding:0;
+			}
+			.menu-principal{
+				height: 70px;
+				width: 100%;
+				background: blue;
+			}
+			.menu-principal ul{
+				list-style:none;
+				font-size: 26px;
+				margin: 20px 50px 25px 50px;			
+				float: right;
+			}
+			.menu-principal ul li{
+				display: inline;
+				color: #fff;
+				border-right: 3px solid yellow;
+				padding-right: 5px;
+			}
+			.menu-principal ul li a{
+				color: #fff;
+				text-decoration: none;
+			}			
+			.menu-principal img{
+				margin-left: 75px;
+			}
+			.cabecalho {
+				margin-top: 30px;
+				margin-bottom: 30px
+			}
+			.cabecalho img{
+				margin: 0 auto;	
+				text-align: center;	
+				display: block;
+			}
+			main h1{
+				text-align: center;
+			}
+			main p{
+				margin-top: 10px;
+				width: 85%;
+				font-size: 18px;	
+				padding:50px;
+				margin:0 auto;
+				text-align: justify;
+			}
+			.estrutura-servicos {
+				width: 100%;
+				float: left;	
+				background: blue;
+				padding-bottom: 30px;
+				padding-top: 15px;
+			}
+			.estrutura-servicos .servicos{
+				margin-top: 10px;
+				width: 32%;
+				margin-left: 1%;
+				float: left;
+				background: #fff;
+			}
+			.estrutura-servicos h2{
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 26px;
+				color: #fff;
+			}
+			.estrutura-servicos .servicos h3{
+				font-size: 22px;
+				text-align: center;
+				color: #000;
+				font-weight: bold;
+
+			}
+			.estrutura-servicos .servicos img{
+
+				margin: 0 auto;
+				margin-top: 20px;
+				display: block;
+			}
+			.estrutura-servicos .servicos footer{
+				background: black;				
+			}
+			.estrutura-servicos .servicos footer p{
+				width: 96%;
+				float: left;
+				padding: 15px;
+			}
+			.estrutura-servicos .servicos footer a{
+				text-align: right;
+				float: right;
+				color: blue;						
+			}		
+			.contato{
+				background: #F9B70D;
+				float: left;
+				width: 100%;
+			}
+			.contato img{
+				display: block;
+				margin: 0 auto;
+			}
+			.rodape{
+				float: left;
+				width: 100%;
+				height:75px;
+				background: green;
+			}
+			.rodape h6{
+				text-align: center;
+				margin-top: 30px;
+				color: #fff;
+			}

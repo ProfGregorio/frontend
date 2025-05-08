@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title> Aula 6 - Menu Responsivo</title>
+		<meta name="description" content="" />
+	    <meta name="keywords" content="" />
+	    <meta name="author" content="" />
+		<link rel="icon" type="image/png" href="favicon.png" />
+		<link rel="stylesheet" type="text/css" href="css/estilo_aula6.css" />	
+		<link rel="stylesheet" type="text/css" href="css/estilow500.css" media="only screen and (max-width: 500px)" />	
+		<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' />	 	
+
+	</head>
+
+	<body>
+		<nav class="menu-principal">
+			<img src="img/logo90x70.png" alt="Logo da Empresa" alt=" " />
+			<input type="checkbox" id="control-nav" />
+
+			<label for="control-nav" class="control-nav"></label>
+			<label for="control-nav" class="control-nav-close"></label>	
+			<nav class="controlando-menu">		
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="pg/sobre.html">Sobre</a></li>
+					<li><a href="#contato">Contato</a></li> 
+				</ul>
+			</nav>
+		</nav>
+		<header class="cabecalho">
+			<div id="slideshow">
+				<img src="img/banner1200x350.png" alt="Banner Principal" class="img imagem-um exibe" />
+				<img src="img/banner1200x350_b.png" alt="Outro banner Principal" class="img imagem-dois esconde" />
+			</div>
+			<div class="navegacao-slider" id="navegacao-slider">
+				<a href="#" class="anterior"  onclick="trocarImg();" >&laquo;</a>
+				<a href="#" class="proximo" onclick="trocarImg();">&raquo;</a>		
+			</div>			
+		</header>
+		<main>
+			<h1>Seja bem vindo ao Aprende Tudo!</h1>
+			<h1 style="display: none;">Seja bem vindo ao Aprende Tudo!</h1>
+			<p>Aqui é um ambiente propício para quem é amante em aprender coisas novas ou ensinar os demais. Nossa plataforma conta com uma galera animadissima e louca para transmitir o conehcimento. Gostou? Faça parte do nosso conceito muda mundo. <a href="#">Clique aqui e Cadastre-se agora mesmo!</a></p>
+		</main>
+		<section class="estrutura-servicos">
+			<h2>Conheça o nosso fluxo de existência &lt;3.</h2>
+			<article class="servicos">
+				<h3>Aprenda!</h3>
+				<img src="img/anuncio290x180.png" alt="Anúncio" />
+				<footer>
+					<p>Phasellus dapibus consequat pharetra. Proin ut tortor leo. Curabitur auctor tincidunt ex quis molestie.</p>
+					<a href="#">Saiba Mais</a>
+				</footer>
+			</article>
+			<article class="servicos">
+				<h3>Compartilhe!</h3>
+				<img src="img/anuncio290x180.png" alt="Anúncio" />
+				<footer>
+					<p>Phasellus dapibus consequat pharetra. Proin ut tortor leo. Curabitur auctor tincidunt ex quis molestie.</p>
+					<a href="#">Saiba Mais</a>
+				</footer>
+			</article>
+			<article class="servicos">
+				<h3>Ensine!</h3>
+				<img src="img/anuncio290x180.png" alt="Anúncio" />
+				<footer>
+					<p>Phasellus dapibus consequat pharetra. Proin ut tortor leo. Curabitur auctor tincidunt ex quis molestie.</p>
+					<a href="#">Saiba Mais</a>
+				</footer>
+			</article>
+		</section>
+		<section class="contato" id="contato">
+			<div class="form-contato">
+				<h2>Contato</h2>
+				<form name="frmContato">
+					<div class="parte-um bloco">
+						<input type="text" name="nome" placeholder="Nome" />
+						<input type="email" name="email" placeholder="Email" />
+						<input type="number" name="telefone" placeholder="Telefone" />
+					</div>
+
+					<div class="parte-dois bloco ">		
+							<textarea placeholder="Mensagem" name="mensagem" rows="9" cols="50"></textarea>
+					</div>
+					<button type="submit" class="enviar" onclick="alert('Obrigado, mensagem enviada com sucesso!');">ENVIAR MENSAGEM</button>
+				</form>
+			</div>
+		</section>
+		<footer class="rodape principal ">
+			<h6 >Desenvolvido por Gregorio | Feito com muito amor</h6>
+			<input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
+		</footer>
+	</body>
+</html>
+

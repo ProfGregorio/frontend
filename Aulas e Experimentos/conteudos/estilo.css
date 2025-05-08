@@ -1,0 +1,13 @@
+/*AQUI É UM COMENTÁRIO NO CSS*/
+			h1{
+				color: pink;
+				font-size: 12px; 
+				font-weight: bold;
+				line-height:2
+			}
+
+			.topoPrincipal {
+				height: 500px
+				width:100%;
+				background: blue;
+			}	

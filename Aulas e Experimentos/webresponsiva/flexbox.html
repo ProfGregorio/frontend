@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox - Exemplos Didáticos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .container {
+      display: flex;
+      border: 2px solid #444;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .item {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      margin: 5px;
+      text-align: center;
+    }
+
+    /* Exemplo justify-content */
+    .jc-example .item {
+      width: 100px;
+      height: 100px;
+      background-color: coral;
+      line-height: 100px;
+    }
+
+    .jc-space-around {
+      justify-content: space-around;
+    }
+
+    /* Exemplo flex-grow */
+    .grow-example .item {
+      margin: 5px;
+      background-color: steelblue;
+    }
+
+    .grow-example .item:nth-child(1) { flex-grow: 1; }
+    .grow-example .item:nth-child(2) { flex-grow: 2; }
+    .grow-example .item:nth-child(3) { flex-grow: 1; }
+
+  </style>
+</head>
+<body>
+  <h1>Flexbox - Exemplos Didáticos</h1>
+
+  <section>
+    <h2>Introdução ao Flexbox</h2>
+    <p>O Flexbox (Flexible Box Layout) é um modelo de layout CSS que permite alinhar e distribuir espaço entre os itens em um contêiner, mesmo quando seu tamanho é desconhecido e/ou dinâmico.</p>
+  </section>
+
+  <section>
+    <h2>Flexbox Básico - Itens distribuídos igualmente</h2>
+    <div class="container">
+      <div class="item" style="flex: 1;">Item 1</div>
+      <div class="item" style="flex: 1;">Item 2</div>
+      <div class="item" style="flex: 1;">Item 3</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>justify-content: space-around</h2>
+    <div class="container jc-example jc-space-around">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>flex-grow: Item 2 ocupa mais espaço</h2>
+    <div class="container grow-example">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Propriedades úteis do Flexbox</h2>
+    <ul>
+      <li><strong>flex-direction:</strong> muda a direção do eixo principal (ex: row, column)</li>
+      <li><strong>justify-content:</strong> alinha no eixo principal (start, center, space-between, etc.)</li>
+      <li><strong>align-items:</strong> alinha no eixo cruzado (start, center, stretch, etc.)</li>
+      <li><strong>flex-wrap:</strong> permite quebrar linha quando necessário</li>
+      <li><strong>gap:</strong> define espaçamento entre os itens</li>
+      <li><strong>flex-grow:</strong> define quanto um item deve crescer</li>
+      <li><strong>align-self:</strong> alinha individualmente no eixo cruzado</li>
+    </ul>
+  </section>
+</body>
+</html>

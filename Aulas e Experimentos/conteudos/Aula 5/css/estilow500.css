@@ -1,0 +1,15 @@
+ 		.form-contato h2{
+    			text-align: center;
+    		}
+    		.form-contato{
+				width: 100%;
+				margin: 20px auto;
+				
+			}
+			.form-contato .bloco{
+				width: 100%;
+				margin: auto;
+			}
+			.form-contato .bloco input,.form-contato .bloco textarea {
+				width: 95%;
+			}

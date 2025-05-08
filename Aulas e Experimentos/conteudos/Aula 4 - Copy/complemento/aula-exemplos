@@ -1,0 +1,91 @@
+seletor{
+	propriedade:valor;
+}
+
+
+SELETOR -> TAGS HTML, CLASS, ID.
+
+
+CLASS - CLASSE
+CLASSIFICAR UM ELEMENTO - BATIZAR, DAR NOME.
+EU ELEVO uma tag a outro nivel de reconhecimento.
+N nome de classes para o elemento
+ACESSO: .(ponto)nome da classe
+
+ID - IDENTIFICAR
+Excluiso.
+Acesso: #(hashtag)nomeId
+
+DOM - Document Obecjt Model
+DOM -> SÓ PODE TER UM ID - UNICO
+
+
+
+
+
+
+
+UNIVESP
+POSSO OPTAR POR CHAMAR APENAS DE CURSO WEB.
+
+<TURMA class="curso-web itapetininga">
+	<ALUNO>Gregorio </ALUNO>
+	<ALUNO>REINILDES</ALUNO>
+	<ALUNO> ANNE</ALUNO>
+	<ALUNO>TAMIRES</ALUNO>
+	<ALUNO>FERNANDO</ALUNO>
+	<ALUNO>LUAN</ALUNO>
+</TURMA>
+
+<TURMA class="curso-web sorocaba">
+	<ALUNO>FULANO </ALUNO>
+	<ALUNO>CICLANO</ALUNO>
+	<ALUNO> BELTRANO</ALUNO>
+	<ALUNO>TAMIRES</ALUNO>
+	<ALUNO>FERNANDO</ALUNO>
+	<ALUNO>LUAN</ALUNO>
+</TURMA>
+
+
+
+
+<PESSOA CLASS="GREGORIO QUEIROZ SOROCABA 170391">
+	
+<PESSOA>	
+
+pessoa.GREGORIO.QUEIROZ{
+	
+}
+pessoa.39392566840{
+	
+}
+
+
+<div class="curso">
+	<div class="aluno itapetininga"> </div>
+	<div class="aluno sorocaba"> </div>
+	<div class="aluno sorocaba"> </div>
+	<div class="aluno itapetininga"> </div>
+</div>
+
+
+
+/* CSS*/
+
+.curso .aluno{
+	width:200px;
+	height:500px;
+}
+.curso .aluno.itapetininga{
+	background:black;
+	color:#fff;
+	/**/
+		width:200px;
+	height:500px;
+}
+.curso .aluno.sorocaba{
+	background:blue;
+	color:yellow;
+		width:200px;
+	height:500px;
+}

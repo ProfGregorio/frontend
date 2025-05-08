@@ -1,0 +1,11 @@
+
+ESTRUTURA HTML5
+http://gregmaster.com.br/portifolio/seo/img/html5-estrutura.html
+TAGS HTML 5
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5/HTML5_element_list
+
+VALIDATOR HTML/CSS 
+https://validator.w3.org/#validate_by_uri+with_options
+
+CURSO DE JS
+https://www.youtube.com/watch?v=093dIOCNeIc&list=PLQCmSnNFVYnT1-oeDOSBnt164802rkegc

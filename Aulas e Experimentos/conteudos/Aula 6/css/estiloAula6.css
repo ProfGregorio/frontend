@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+/*
+	Nome: Estilo da Home 
+	Data: 15/01/2017
+	Descrição:  Versão inicial. 
+	Versão: 0.1
+	Autor: Gregorio
+	Autor URI:  www.gregmaster.com.br
+*/
+
+			*{
+				margin: 0;
+				padding:0;
+			}
+			a,h2,h3,h1{
+				font-family: "verdana"; 				
+			}
+			.menu-principal{
+				height: 70px;
+				width: 100%;
+				background: blue;
+				position: fixed;  				
+  				z-index: 2;		
+				top: 0;
+  				right: 0;
+  				left: 0;						
+			}
+			.menu-principal ul{
+				list-style:none;
+				font-size: 26px;
+				margin: 20px 50px 25px 50px;			
+				float: right;
+
+			}
+			.menu-principal ul li{
+				display: inline;
+				color: #fff;
+				border-right: 3px solid yellow;
+				padding-right: 5px;
+			}
+			.menu-principal ul li a{
+				color: #fff;
+				text-decoration: none;
+			}			
+			.menu-principal img{
+				margin-left: 75px;
+			}
+			.cabecalho {
+				margin-top: 30px;
+				margin-bottom: 30px
+			}
+			.cabecalho img{
+				margin: 0 auto;	
+				text-align: center;	
+				display: block;
+			}
+			main h1{
+				text-align: center;
+			}
+			main h1:hover{
+				color: yellow
+			}
+			main p{
+				margin-top: 10px;
+				width: 85%;
+				font-size: 18px;	
+				padding:50px;
+				margin:0 auto;
+				text-align: justify;
+			}
+			.estrutura-servicos {
+				width: 100%;
+				float: left;	
+				background: blue;
+				padding-bottom: 30px;
+				padding-top: 15px;
+			}
+			.estrutura-servicos .servicos{
+				margin-top: 10px;
+				width: 32%;
+				margin-left: 1%;
+				float: left;
+				background: #fff;
+			}
+			.estrutura-servicos h2{
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 26px;
+				color: #fff;
+			}
+			.estrutura-servicos .servicos h3{
+				font-size: 22px;
+				text-align: center;
+				color: #000;
+				font-weight: bold;
+
+			}
+			.estrutura-servicos .servicos img{
+
+				margin: 0 auto;
+				margin-top: 20px;
+				display: block;
+			}
+			.estrutura-servicos .servicos footer{
+				background: black;				
+			}
+			.estrutura-servicos .servicos footer p{
+				width: 96%;
+				float: left;
+				padding: 15px;
+			}
+			.estrutura-servicos .servicos footer a{
+				text-align: right;
+				float: right;
+				color: blue;						
+			}		
+			.contato{
+				background: #F9B70D;
+				float: left;
+				width: 100%;
+			}
+			.form-contato{
+				width: 50%;
+				margin: 30px auto;
+			}
+			.form-contato .bloco{
+				width: 46%;
+				float: left;
+				padding:10px;
+			}
+
+			.form-contato .bloco.parte-um{
+				
+			}			
+			.form-contato .bloco.parte-dois{
+				
+			}
+			.form-contato .bloco input,.form-contato .bloco textarea {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border-radius: 4px;
+			}
+			.contato h2{
+				text-transform: uppercase;
+				color: #fff;
+				font-size: 48px;
+				margin: 20px 0px;
+			}
+			.form-contato .enviar{
+				background: green;
+				width: 100%;
+				display: block;
+				border:0;
+				height: 60px;
+				color: #fff;
+				font-size: 24px;
+			}
+			.form-contato .enviar:hover{
+				background: #fff;
+				font-size: 26px;
+				color: green;
+			}
+			.contato img{
+				display: block;
+				margin: 0 auto;
+			}
+			.rodape{
+				float: left;
+				width: 100%;
+				height:75px;
+				background: green;
+			}
+			.rodape h6{
+				text-align: center;
+				margin-top: 30px;
+				color: #fff;
+			}
+
+/*NAVEGAÇÃO DO SLIDER*/
+.navegacao-slider a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+.navegacao-slider a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navegacao-slider .anterior {
+    background-color: #f1f1f1;
+    color: black;
+    float: left;
+}
+
+.navegacao-slider .proximo {
+    background-color: #4CAF50;
+    color: white;
+    float: right;
+}
+.esconde{
+	display: none !important;
+}
+.exibe{
+	display: block !important;
+}
+
+@media only screen and (max-width: 500px) {
+    		.form-contato h2{
+    			text-align: center;
+    		}
+    		.form-contato{
+				width: 100%;
+				margin: 20px auto;
+				
+			}
+			.form-contato .bloco{
+				width: 100%;
+				margin: auto;
+			}
+			.form-contato .bloco input,.form-contato .bloco textarea {
+				width: 95%;
+			}
+}
+
+
+/*CONTROLANDO A RESPONSIVIDADE DO MENU*/
+nav .controlando-menu {
+  	display: inline;
+}
+
+@media screen and (max-width: 767px) {
+  nav .control-nav {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: block;
+    width: 30px;
+    padding: 5px 0;
+    border: solid #333;    
+    border-width: 3px 0;    
+    z-index: 2;
+    cursor: pointer;
+  }
+   nav .control-nav:before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: #333;
+  }
+
+  nav .control-nav-close {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
+    background: rgba(0,0,0,0.4);
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    -webkit-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+  nav .controlando-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+    border-left: 1px solid #ccc;
+    overflow-x: auto;
+    z-index: 2;
+    background: blue;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    -webkit-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+}
+
+
+/*CHECKBOX*/
+input#control-nav {
+    visibility: hidden;
+    position: absolute;
+    /*left: -9999px;
+    opacity: 0;*/
+}
+
+#control-nav:checked ~ .control-nav-close {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+#control-nav:checked ~ nav {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+
+/*PÁGINA SOBRE*/
+.sobre h1{
+	float: left;
+    width: 100%;
+    text-align: center;
+    margin: 25px 0px;
+}
+
+.sobre .detalhes{
+	background: red;
+}
+
+.sobre img{
+	margin:25px;
+}
+
+.sobre .bloco{
+	float: left;
+	min-height: 310px;
+}
+.sobre .bloco.parte-um{
+	background: blue;
+	width: 40%;
+}
+.sobre .bloco.parte-dois{
+	background: yellow;
+	width: 60%;
+}
+.sobre p{
+	background: pink;
+}
+
+/*PÁGINA CONTATO*/
+

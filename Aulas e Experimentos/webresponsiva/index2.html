@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste com a tag Picture</title>
+</head>
+<body>
+  <header>
+    <h1>Teste alterando o conteúdo da imagem usando uma DIV</h1>
+  </header>
+  <hr>
+  <section>
+    <picture>
+      <!-- Dispositivos pequenos (até 450px) com alta densidade de pixels -->
+      <source 
+        media="(max-width: 450px) and (min-resolution: 2dppx), 
+               (max-width: 450px) and (min-resolution: 192dpi), 
+               (max-width: 450px) and (-webkit-min-device-pixel-ratio: 2)" 
+        srcset="rwd-4_1362_2227_81.jpg">
+
+      <!-- Dispositivos pequenos (até 450px) padrão -->
+      <source media="(max-width: 450px)" srcset="rwd-4_450_736_81.jpg">
+
+      <!-- Tablets ou telas médias (até 960px) com alta resolução -->
+      <source 
+        media="(max-width: 960px) and (min-resolution: 2dppx), 
+               (max-width: 960px) and (min-resolution: 192dpi), 
+               (max-width: 960px) and (-webkit-min-device-pixel-ratio: 2)" 
+        srcset="rwd-3_1500_1078_81.jpg">
+
+      <!-- Tablets ou telas médias padrão -->
+      <source media="(max-width: 960px)" srcset="rwd-3_960_690_81.jpg">
+
+      <!-- Laptops (até 1400px) com alta resolução -->
+      <source 
+        media="(max-width: 1400px) and (min-resolution: 2dppx), 
+               (max-width: 1400px) and (min-resolution: 192dpi), 
+               (max-width: 1400px) and (-webkit-min-device-pixel-ratio: 2)" 
+        srcset="rwd-2_2049_1114_81.jpg">
+
+      <!-- Laptops padrão -->
+      <source media="(max-width: 1400px)" srcset="rwd-2_1400_761_81.jpg">
+
+      <!-- Telas grandes (monitores, desktops) -->
+      <source media="(min-width: 1401px)" srcset="rwd-1_2577_1165_81.jpg">
+
+      <!-- Fallback padrão -->
+      <img src="rwd-2_1400_761_81.jpg" style="width:auto;" alt="Imagem responsiva">
+    </picture>
+  </section>
+</body>
+</html>

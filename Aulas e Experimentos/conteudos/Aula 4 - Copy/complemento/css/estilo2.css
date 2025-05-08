@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/*
+	Nome: Estilo da Home 
+	Data: 15/01/2017
+	Descrição:  Versão inicial. 
+	Versão: 0.1
+	Autor: Gregorio
+	Autor URI:  www.gregmaster.com.br
+*/
+
+			.menu-principal{
+
+				background: yellow;
+			}
+
+			.cabecalho {
+				background: blue;
+			}
+			

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplos de CSS Grid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f4f4;
+    }
+    section {
+      margin-bottom: 50px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .item {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .example1 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .example2 {
+      grid-template-columns: 100px 1fr 2fr;
+    }
+
+    .example3 {
+      grid-template-columns: 1fr 1fr 1fr 1fr; /*repeat(4, 1fr);*/
+      grid-template-rows: repeat(2, 100px);
+    }
+
+    .example4 {
+      grid-template-areas:
+        "header header"
+        "menu main"
+        "footer footer";
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 60px 200px 60px;
+    }
+    .header { grid-area: header; }
+    .menu { grid-area: menu; }
+    .main { grid-area: main; }
+    .footer { grid-area: footer; }
+
+    code {
+      background: #eee;
+      padding: 3px 5px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Aprendendo Grid Layout com CSS</h1>
+
+  <!-- Seção 1 -->
+  <section>
+    <h2>1. Grid com 3 colunas iguais</h2>
+    <p>Usando: <code>grid-template-columns: 1fr 1fr 1fr;</code></p>
+    <div class="grid example1">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
+
+  <!-- Seção 2 -->
+  <section>
+    <h2>2. Grid com colunas de tamanhos diferentes</h2>
+    <p>Usando: <code>grid-template-columns: 100px 1fr 2fr;</code></p>
+    <div class="grid example2">
+      <div class="item">A</div>
+      <div class="item">B</div>
+      <div class="item">C</div>
+    </div>
+  </section>
+
+  <!-- Seção 3 -->
+  <section>
+    <h2>3. Grid com linhas e colunas definidas</h2>
+    <p>Usando: <code>grid-template-columns: repeat(4, 1fr)</code> e <code>grid-template-rows: repeat(2, 100px)</code></p>
+    <div class="grid example3">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+    </div>
+  </section>
+
+  <!-- Seção 4 -->
+  <section>
+    <h2>4. Grid com áreas nomeadas</h2>
+    <p>Usando <code>grid-template-areas</code> para estruturar layout de site:</p>
+    <div class="grid example4">
+      <div class="item header">Cabeçalho</div>
+      <div class="item menu">Menu</div>
+      <div class="item main">Conteúdo Principal</div>
+      <div class="item footer">Rodapé</div>
+    </div>
+  </section>
+
+</body>
+</html>

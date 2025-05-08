@@ -1,0 +1,148 @@
+<html>
+<head>
+	<style type="text/css">
+		header{
+			text-align: center;
+		}
+		.foto-perfil{
+			height: 200px;
+			border-radius:15%;
+		}
+		
+		.icones-rede-social{
+			list-style-type: none;
+		}
+		
+		.icones-rede-social li{
+			display: inline;
+			padding: 10px;
+		}
+		.carta-apresentacao,.formacao,.profissional  {
+		/*	margin: 30px;*/
+			margin: 20px 100px 20px 100px; 
+		}
+		.video {
+			text-align: center;
+		}
+		.formacao,.profissional {
+			text-align: center;
+		}
+		.formacao ul,.profissional ul{
+			list-style-type: none;
+		}
+		
+		.formacao ul li, .profissional ul li{
+			display: inline;
+			padding: 10px;
+		}
+		.qualidades{
+			text-align: center;
+		}
+		.qualidades ul{
+			list-style-type: none;
+			text-align: center;
+		}
+		.qualidades ul li{
+			display: inline;
+			padding: 10px;
+		}		
+		.carta-apresentacao p{
+			text-align: justify;
+		}
+		.download{
+			position: absolute;
+			top:10px;
+			right: 10px
+		}		
+	</style>
+    <script src="https://kit.fontawesome.com/4696aac30b.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    	function verificaIdade(){
+    	var idade =0;
+   		 var data = new Date();
+   		 var dia = data.getDate();
+   		 var mes = data.getMonth() +1;
+   		 var ano = data.getFullYear();
+   		 
+   		 var ano_n=1991;
+		 var mes_n=3;
+   		 var dia_n=17;
+   		 console.log(ano_n,ano,mes_n,mes,dia_n,dia)
+
+   		 if(mes==mes_n && dia==dia_n){
+   		 	 idade= ano - ano_n;   		 	
+   		 }else{
+   		 	idade= ano - ano_n -1;
+   		 }
+   		 var i = idade.toString();
+		document.getElementById("idade").innerText = i+" anos";
+		/*alert(i+" anos");*/   		 
+    	}
+
+
+
+    </script>
+
+</head>
+<body onload="verificaIdade();">
+	<header >
+ 		<img src="gregorio-perfil.jpeg"  class="foto-perfil" title="Gregorio de Almeida Queiroz - Foto de Perfil" alt="Foto de Perfil do Gregorio"  />
+ 		<h1>Gregorio de Almeida Queiroz, <b id="idade" 
+ 			></b></h1>
+ 		<section>
+ 			<ul class="icones-rede-social">
+ 				<li><a href="https://www.facebook.com/GregMasterQueiroz"  target="_blank" ><i class="fab fa-facebook fa-3x"></i></a></li>
+ 				<li><a href="https://www.linkedin.com/in/gregmasterbr/"  target="_blank" ><i class="fab fa-linkedin fa-3x"></i></a></li> 		
+ 				<li><a href="https://api.whatsapp.com/send?phone=05515981057742&text=%22Ol%C3%A1,%20Gregorio,%20eu%20gostei%20do%20seu%20curriculo,%20vamos%20conversar?%22"  target="_blank" ><i class="fab fa-whatsapp fa-3x"></i></a></li>
+ 			</ul>
+ 		</section>
+ 		<address>
+ 			<span>(15) 98105-7742</span> |
+ 			<span>gregmasterbr@gmail.com</span><br>
+ 			<span><a href="https://www.google.com.br/maps/dir/R.+Ant%C3%B4nio+Fratti,+42,+Sorocaba+-+SP//@-23.5043943,-47.3709003,16z/data=!3m1!4b1!4m9!4m8!1m5!1m1!1s0x94cf66cc30cae2d5:0xc566463e5f2e8e5c!2m2!1d-47.3665337!2d-23.5043944!1m0!3e2" target="_blank">Rua. Antônio Fratti, 42 - Vila São João - Sorocaba/SP</a></span>
+ 		</address>
+	</header>
+
+	<section class="carta-apresentacao">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis sollicitudin mi, eget ornare diam cursus at. Donec pulvinar nulla a sapien pharetra sagittis et a nibh. Donec porta magna vitae dui sagittis mollis. Aenean et odio vitae ante hendrerit tristique id vel dolor. Duis lobortis fermentum mi, ac molestie lorem pretium a. 
+		</p>
+		<p>Vivamus sit amet tellus eget purus ultricies fermentum quis ut mauris. Nulla tincidunt nibh neque, non dignissim orci rhoncus eu. Etiam in ipsum non orci blandit vulputate at triendisse malesuada lorem eu diam mattis, luctus ornare neque tempor. Morbi quis lectus et lacus suscipit viverra.
+
+		</p>
+	</section>
+	<section class="video">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/65DD9Nanc3Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</section>
+	<section class="qualidades ">
+		<h2>Qualidades</h2>
+		<ul>
+			<li title="Sou da PAZ"><i class="fab fa-angellist fa-3x" ></i></li>
+			<li title="BOM OUVINTE"><i class="fas fa-assistive-listening-systems fa-3x"></i></li>
+			<li title="JUSTO"><i class="fas fa-balance-scale fa-3x"></i></li>
+			<li><p>XXXXXX</p></li>
+		</ul>		
+	</section>
+	<section class="formacao">
+		<h2>Formação</h2>
+		<ul>
+			<li><p>XXXXXX</p></li>
+			<li><p>XXXXXX</p></li>
+			<li><p>XXXXXX</p></li>
+			<li><p>XXXXXX</p></li>
+		</ul>		
+	</section>
+	<section class="profissional">
+		<h2>Experiência Profissional</h2>
+		<ul>
+			<li><p>XXXXXX</p></li>
+			<li><p>XXXXXX</p></li>
+			<li><p>XXXXXX</p></li>
+			<li><p>XXXXXX</p></li>
+		</ul>		
+	</section>	
+
+	<a class="download" href="#" onclick="window.print();"><i class="fas fa-download fa-3x"></i></a>
+</body>
+
+</html>
