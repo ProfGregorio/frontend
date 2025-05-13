@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temas Personalizáveis com CSS</title>
+  <style>
+    
+    :root {
+      --cor-fundo: #ffffff;
+      --cor-texto: #000000;
+      --cor-destaque: #4CAF50;
+    }
+
+    body {
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .botao-tema {
+      background-color: var(--cor-destaque);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    h1 {
+      color: var(--cor-destaque);
+    }
+  </style>
+</head>
+<body>
+    <h1>Exemplo de Tema Personalizável</h1>
+    <p>Escolha um tema:</p>
+
+    <button class="botao-tema" onclick="aplicarTemaClaro()">Claro</button>
+    <button class="botao-tema" onclick="aplicarTemaEscuro()">Escuro</button>
+    <button class="botao-tema" onclick="aplicarTemaColorido()">Colorido</button>
+
+    <br><br><hr>
+    <section>
+        <h2>🎯 O que é :root no CSS?</h2>
+        <p>O seletor :root representa o elemento raiz do documento HTML. Ou seja, ele se refere ao próprio <code><mark>html</mark></code>.</p>
+        <p>A principal vantagem de usar :root é que permite declarar variáveis CSS globais, que podem ser reutilizadas em todo o arquivo.</p>
+        <code>
+            :root {
+                --cor-primaria: #4CAF50;
+                --cor-secundaria: #ffffff;
+                --espacamento-padrao: 16px;
+              }
+              
+        </code>
+        <h3>Agora, você pode usar essas variáveis em qualquer lugar:</h3>
+        <code>
+            body {
+                background-color: var(--cor-secundaria);
+                color: var(--cor-primaria);
+                padding: var(--espacamento-padrao);
+              }
+              
+        </code>
+        <h2>📌 Quando usar :root?</h2>
+        <p>Use :root quando quiser:</p>
+        <ul>
+           <li> Criar temas e esquemas de cores reutilizáveis</li>
+            <li>Definir valores padrão como tamanhos, espaçamentos, fontes</li>
+            <li>Facilitar a manutenção do CSS (altere o valor uma vez só e ele reflete em todos os lugares)</li>
+            <li>Trabalhar com modo escuro/claro ou personalização com JavaScript</li>
+        </ul>
+    </section>
+    <script>
+        function aplicarTemaClaro() {
+        document.documentElement.style.setProperty('--cor-fundo', '#ffffff');
+        document.documentElement.style.setProperty('--cor-texto', '#000000');
+        document.documentElement.style.setProperty('--cor-destaque', '#4CAF50');
+        }
+
+        function aplicarTemaEscuro() {
+        document.documentElement.style.setProperty('--cor-fundo', '#121212');
+        document.documentElement.style.setProperty('--cor-texto', '#f0f0f0');
+        document.documentElement.style.setProperty('--cor-destaque', '#bb86fc');
+        }
+
+        function aplicarTemaColorido() {
+        document.documentElement.style.setProperty('--cor-fundo', '#fef3c7');
+        document.documentElement.style.setProperty('--cor-texto', '#1e293b');
+        document.documentElement.style.setProperty('--cor-destaque', '#ef4444');
+        }
+    </script>
+</body>
+</html>
