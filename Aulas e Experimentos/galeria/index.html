@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria Responsiva</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      color: white;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .item:hover img {
+      transform: scale(1.05);
+    }
+
+    .item:hover .info {
+      transform: translateY(0);
+    }
+
+    .info h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .info p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Galeria de Imagens</h1>
+
+  <div class="galeria">
+    <div class="item">
+      <img src="https://placehold.co/400x250/000000/FFFFFF?text=Imagem+1" alt="Imagem 1">
+      <div class="info">
+        <h3>Imagem 1</h3>
+        <p>Descrição da primeira imagem na galeria.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://placehold.co/400x250/222222/FFFFFF?text=Imagem+2" alt="Imagem 2">
+      <div class="info">
+        <h3>Imagem 2</h3>
+        <p>Texto explicativo ou curioso sobre esta imagem.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://placehold.co/400x250/444444/FFFFFF?text=Imagem+3" alt="Imagem 3">
+      <div class="info">
+        <h3>Imagem 3</h3>
+        <p>Legenda ou contexto informativo aqui.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://placehold.co/400x250/666666/FFFFFF?text=Imagem+4" alt="Imagem 4">
+      <div class="info">
+        <h3>Imagem 4</h3>
+        <p>Mais uma imagem com descrição ao passar o mouse.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

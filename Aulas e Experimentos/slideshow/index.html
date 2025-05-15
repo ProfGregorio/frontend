@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow Responsivo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .slideshow {
+      position: relative;
+      max-width: 100%;
+      height: 60vh;
+      overflow: hidden;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+      transform: scale(1.05);
+    }
+
+    .slide picture,
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 1;
+    }
+
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 10;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    #toggle-autoplay {
+      top: 10px;
+      right: 50%;
+    }
+
+    @media (max-width: 600px) {
+      .btn {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center">Slideshow Manual</h2>
+  <div class="slideshow" id="slideshow-manual">
+    <div class="slide active">
+      <picture>
+        <source srcset="https://placehold.co/800x400.webp?text=Imagem+1" type="image/webp">
+        <img src="https://placehold.co/800x400.png?text=Imagem+1" alt="Imagem com fundo cinza e texto Imagem 1">
+      </picture>
+    </div>
+    <div class="slide">
+      <picture>
+        <source srcset="https://placehold.co/800x400.webp?text=Imagem+2" type="image/webp">
+        <img src="https://placehold.co/800x400.png?text=Imagem+2" alt="Imagem com fundo cinza e texto Imagem 2">
+      </picture>
+    </div>
+    <div class="slide">
+      <picture>
+        <source srcset="https://placehold.co/800x400.webp?text=Imagem+3" type="image/webp">
+        <img src="https://placehold.co/800x400.png?text=Imagem+3" alt="Imagem com fundo cinza e texto Imagem 3">
+      </picture>
+    </div>
+
+    <button class="btn prev" onclick="changeSlide(-1, 'slideshow-manual')" aria-label="Slide anterior" role="button">&#10094;</button>
+    <button class="btn next" onclick="changeSlide(1, 'slideshow-manual')" aria-label="Próximo slide" role="button">&#10095;</button>
+  </div>
+<br><br><br><br><br><br>
+  <h2 style="text-align:center">Slideshow com Autoplay</h2>
+  <div class="slideshow" id="slideshow-autoplay" aria-live="off">
+    <div class="slide active">
+      <picture>
+        <source srcset="https://placehold.co/800x400.webp?text=Auto+1" type="image/webp">
+        <img src="https://placehold.co/800x400.png?text=Auto+1" alt="Imagem automática com fundo cinza e texto Auto 1">
+      </picture>
+    </div>
+    <div class="slide">
+      <picture>
+        <source srcset="https://placehold.co/800x400.webp?text=Auto+2" type="image/webp">
+        <img src="https://placehold.co/800x400.png?text=Auto+2" alt="Imagem automática com fundo cinza e texto Auto 2">
+      </picture>
+    </div>
+    <div class="slide">
+      <picture>
+        <source srcset="https://placehold.co/800x400.webp?text=Auto+3" type="image/webp">
+        <img src="https://placehold.co/800x400.png?text=Auto+3" alt="Imagem automática com fundo cinza e texto Auto 3">
+      </picture>
+    </div>
+
+    <button class="btn prev" onclick="changeSlide(-1, 'slideshow-autoplay', true)" aria-label="Slide anterior" role="button">&#10094;</button>
+    <button class="btn next" onclick="changeSlide(1, 'slideshow-autoplay', true)" aria-label="Próximo slide" role="button">&#10095;</button>
+    <button class="btn" id="toggle-autoplay" aria-label="Pausar slideshow" role="button">⏸️</button>
+  </div>
+
+  <script>
+    function changeSlide(direction, slideshowId, updateAutoplayIndex = false) {
+      const slideshow = document.getElementById(slideshowId);
+      const slides = slideshow.querySelectorAll('.slide');
+      let current = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+
+      slides[current].classList.remove('active');
+      current = (current + direction + slides.length) % slides.length;
+      slides[current].classList.add('active');
+
+      if (slideshowId === 'slideshow-autoplay' && updateAutoplayIndex) {
+        autoplayIndex = current;
+      }
+    }
+
+    // Autoplay com controle
+    let autoplayIndex = 0;
+    let isAutoplaying = true;
+    const toggleBtn = document.getElementById('toggle-autoplay');
+
+    toggleBtn.addEventListener('click', () => {
+      isAutoplaying = !isAutoplaying;
+      toggleBtn.textContent = isAutoplaying ? '⏸️' : '▶️';
+      toggleBtn.setAttribute('aria-label', isAutoplaying ? 'Pausar slideshow' : 'Reproduzir slideshow');
+    });
+
+    setInterval(() => {
+      if (isAutoplaying) {
+        const slideshow = document.getElementById('slideshow-autoplay');
+        const slides = slideshow.querySelectorAll('.slide');
+
+        slides.forEach(slide => slide.classList.remove('active'));
+        autoplayIndex = (autoplayIndex + 1) % slides.length;
+        slides[autoplayIndex].classList.add('active');
+      }
+    }, 3000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pratos</title>
+    <style>
+        body {
+        background-color: wheat;
+        }
+
+        .card-deck {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            transition: 0.5s;
+        }
+
+        img{
+
+            border-radius: 5px;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-deck">
+        <div class="card">
+            <img src="https://placehold.co/350x250/000000/FFFFFF/png?text=Parmegiana" alt="" title="" />
+        </div>
+        <div class="card">
+            <img src="https://placehold.co/350x250/orange/white/png?text=File de Frango" alt="" title="" />
+        </div>    
+        <div class="card">
+            <img src="https://placehold.co/350x250/red/white/png?text=Bife a Cavalo" alt="" title="" />
+        </div>     
+        <div class="card">
+            <img src="https://placehold.co/350x250/purple/black/png?text=Strogonoff" alt="" title="" />
+        </div>                       
+    </div>
+<script>    
+    // const cards = document.querySelectorAll('.card');
+    // cards.forEach(card => {
+
+    //     card.addEventListener('mouseenter', () => {
+    //         cards.forEach(c => c.style.opacity = '0.3'); // Define a opacidade de todos os cards para 0.3
+    //         card.style.opacity = '1'; // Define a opacidade do card atual (hover) para 1
+    //     });
+
+    //     card.addEventListener('mouseleave', () => {
+    //         cards.forEach(c => c.style.opacity = '1'); // Quando o mouse sai de um card, redefine a opacidade de todos os cards para 1
+    //     });
+    // });
+
+    const cards = document.querySelectorAll('.card');
+
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener('mouseenter', () => {
+            for (let j = 0; j < cards.length; j++) {
+                cards[j].style.opacity = '0.3';
+            }
+            cards[i].style.opacity = '1';
+        });
+
+        cards[i].addEventListener('mouseleave', () => {
+            for (let j = 0; j < cards.length; j++) {
+                cards[j].style.opacity = '1';
+            }
+        });
+}
+
+</script>
+</body>
+</html>
