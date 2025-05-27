@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando informação no LocalStorage</title>
+
+</head>
+<body>
+    <h1>Manipulando informações no LocalStorage</h1>
+    <p>O localStorageobjeto permite que você salve pares chave/valor no navegador.</p>
+    <ul>
+        <li>O objeto localStorage armazena dados sem data de expiração;</li>
+        <li>Os dados não são excluídos quando o navegador é fechado e ficam disponíveis para sessões futuras;</li>
+    </ul>
+    <h2>Parâmetros</h2>
+    <p>key - Obrigatório. O nome da variável representada pela Chave</p>
+    <p>Value - Obrigatório. O conteúdo para a Chave</p>
+    
+    <h2>Salvar dados no armazenamento local</h2>
+    <code>localStorage.setItem(key, value);</code>
+    
+    <h2>Ler dados do armazenamento local</h2>
+    <code>let nome = localStorage.getItem(key);</code>
+    
+    <h2>Remover dados do armazenamento local</h2>
+    <code>localStorage.removeItem(key);</code>
+    
+    <h2>Remover tudo (limpar armazenamento local)</h2>
+    <code>localStorage.clear();</code>
+
+
+    <hr>
+    <h3 id="nome"></h3>
+
+    <input type="text" placeholder="Digite o Nome" id="novoNome">
+    <button onclick="mudaConteudo()">MUDAR</button>
+    
+    <script>
+        //localStorage.setItem("nome", "Carlos");      
+
+        document.getElementById("nome").innerHTML = localStorage.getItem("nome");
+
+        function mudaConteudo(){
+            let novoNome = document.getElementById("novoNome").value;
+
+            localStorage.setItem("nome", novoNome);
+            location.reload();
+        }
+    </script>
+</body>
+</html>

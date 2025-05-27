@@ -1,0 +1,18 @@
+[
+    {
+        "nome":"João Mineiro", 
+        "sobre":"Sou uma pessoa legal",
+        "img":"https://placehold.co/150x150/000000/FFFFFF/png?text=foto", 
+        "data_nasc":"20/01/2008",
+        "whatsapp":"15981057742",
+        "hobbies":["A", "B", "C"]
+    },
+    {
+        "nome":"Maria Chiquinha", 
+        "sobre":"Sou uma pessoa legal",
+        "img":"https://placehold.co/150x150/000000/FFFFFF/png?text=foto", 
+        "data_nasc":"10/11/2007",
+        "whatsapp":"15981057742",
+        "hobbies":["D", "B", "F"]
+    }    
+]

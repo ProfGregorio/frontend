@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando conteúdos de um JSON</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+</head>
+<body>
+    
+    <main>
+        <section class="py-5 text-center container d-none">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Album example</h1>
+                    <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+                    <p> <a href="#" class="btn btn-primary my-2">Main call to action</a> <a href="#" class="btn btn-secondary my-2">Secondary action</a> </p>
+                </div>
+            </div>
+        </section>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container" id="conteudo_alunos">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <!-- Conteudo a ser carregado -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center">
+        <button onclick="excluirLocalStorage();"  class="btn btn-danger my-2">EXCLUIR LocalStorage</button>
+        <button onclick="exportarConteudoJSON()"  class="btn btn-info my-2">DOWNLOAD</button>
+        <button onclick="adicionarAluno()"  class="btn btn-success my-2">ADICIONAR ALUNO</button>
+
+
+    </footer>
+
+        <!-- Modal -->
+    <div class="modal fade" id="modalAluno" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <form >
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalAlunoLabel">Editando ou Adicionando</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>ID: <span id="alunoId"></span></p>
+                <form id="formAluno">
+                    <input type="text" id="nomeAluno" placeholder="Nome do aluno" required>
+                    <textarea id="sobreAluno" name="descricaoEditar" placeholder="Conte sobre você"  rows="4" cols="50" required></textarea>
+                </form>                
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="salvarAlteracoes">SALVAR</button>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+    <hr>
+
+    <script>
+     
+    if (localStorage.getItem("jsonCarregado")!='true'){
+        carregarConteudo();
+    }else{
+        popularHTML();
+    }
+
+    function excluirLocalStorage(){
+        localStorage.clear();
+        window.location.reload();
+    }
+    function carregarConteudo() {
+        fetch("./dados/alunos.json")
+            .then((res) => {
+            return res.json();
+            })
+            .then((conteudo_json) => {
+                // Aqui você armazena o objeto JSON como uma string no localStorage
+                localStorage.removeItem("alunos");
+                localStorage.setItem("alunos", JSON.stringify(conteudo_json));
+                localStorage.setItem("jsonCarregado", 'true');            
+                popularHTML();
+            })
+            .catch((erro) => {
+            console.error("Erro ao carregar as informações:", erro);
+            });
+        }
+
+        function popularHTML(){
+            const alunos = JSON.parse(localStorage.getItem("alunos"));
+            for (let i = 0; i < alunos.length; i++) {
+                adicionarElemento(alunos[i],i);        
+            }
+        }
+
+    function adicionarElemento(aluno, pos) {      
+        const container = document.getElementById("conteudo_alunos");
+        let divContainer = container.getElementsByClassName('row')[0];
+        
+        // Criar um novo elemento para o conteudo do aluno
+        const sectionAluno = document.createElement("section");
+        
+        sectionAluno.setAttribute("id", `aluno-${pos}`);            
+        sectionAluno.classList.add("col", "aluno", "item2");
+
+        // Adicionar conteúdo
+        // <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarCampanha">Editar via Target</button>
+
+
+        sectionAluno.innerHTML = `
+            <div class="card shadow-sm">
+                <img src="${aluno.img}" alt="foto-${aluno.nome}">
+                <h2 class="fw-normal text-center">${aluno.nome}</h2>
+
+                <div class="card-body">
+                    <p class="card-text">${aluno.sobre}.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group"> 
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="abirConteudo(${pos})">Visualizar</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="editarAluno(${pos})">Editar</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="mostrarHobbiesAluno(${pos})">Hobbies</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Adicionar o novo elemento ao container
+        divContainer.appendChild(sectionAluno);       
+    
+    }
+
+        function exportarConteudoJSON() {
+            const alunos = JSON.parse(localStorage.getItem("alunos"));
+
+            const blob = new Blob([JSON.stringify(alunos, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "alunos.json";  // Nome do arquivo de download
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+    <script>
+        const modalAluno = new bootstrap.Modal(document.getElementById('modalAluno'));
+        const salvarAlteracoesBtn = document.getElementById('salvarAlteracoes');
+
+        function editarAluno(idAluno){
+            const alunos = JSON.parse(localStorage.getItem("alunos"));
+            let aluno = alunos[idAluno];
+            // Exibe o ID da campanha na modal (você pode substituir por outros dados)
+            document.getElementById('alunoId').textContent = idAluno;
+            document.getElementById("modalAlunoLabel").innerText = "Editando conteúdo";
+            document.getElementById('nomeAluno').value = aluno.nome;
+            document.getElementById('sobreAluno').value = aluno.sobre;       
+
+            // Exibe a modal
+            modalAluno.show();               
+            // Passa o idAluno para o botão salvar
+            salvarAlteracoesBtn.onclick = function() {
+                        // Pega os dados do formulário
+                        const nome = document.getElementById('nomeAluno').value;
+                        const sobre = document.getElementById('sobreAluno').value;
+                        // Atualiza os dados do aluno no array de alunos
+                        aluno.nome = nome;
+                        aluno.sobre = sobre;
+                        //aluno.dataFim = null;
+
+                        // Atualiza o localStorage com as alunos modificadas
+                        const index = alunos.findIndex(c => c.id === idAluno);
+                        alunos[index] = aluno; // Substitui a campanha antiga pela nova
+
+                        localStorage.setItem('alunos', JSON.stringify(alunos));
+
+                        // Fecha a modal
+                        modalAluno.hide();
+
+                        // Exibe uma mensagem de sucesso ou algo similar
+                        alert("Cadastro do aluno atualizado com sucesso!");
+                        location.reload();
+                    };
+
+        }
+           function adicionarAluno(){
+            const alunos = JSON.parse(localStorage.getItem("alunos"));
+    
+            // Exibe o ID da campanha na modal (você pode substituir por outros dados)
+            document.getElementById('alunoId').textContent = alunos.length +1;
+            document.getElementById("modalAlunoLabel").innerText = "Adicionado conteúdo";
+            document.getElementById('nomeAluno').value = "";
+            document.getElementById('sobreAluno').value ="";       
+
+            // Exibe a modal
+            modalAluno.show();               
+            // Passa o idCampanha para o botão salvar
+            salvarAlteracoesBtn.onclick = function() {
+                        // Pega os dados do formulário
+                        const nome = document.getElementById('nomeAluno').value;
+                        const sobre = document.getElementById('sobreAluno').value;
+                        const img = "https://placehold.co/150x150/000000/FFFFFF/png?text=foto";
+                        const data_nasc = "01/01/2000";
+                        const whatsapp = null;
+                        const hobbies = [];
+                        // Atualiza os dados do aluno no array de alunos
+
+
+                    // Verifica se todos os campos estão preenchidos
+                    if (!nome || !sobre) {
+                        alert("Por favor, preencha todos os campos!");
+                        return;
+                    }
+                    
+
+                    const novaAluno = {
+                        nome,
+                        sobre,
+                        img,
+                        data_nasc,
+                        whatsapp,
+                        hobbies
+                    };
+
+                    // Carrega as campanhas existentes ou cria uma lista vazia
+                    let alunos = JSON.parse(localStorage.getItem("alunos")) || [];
+                    alunos.push(novaAluno);
+
+                    // Salva novamente no localStorage
+                    localStorage.setItem("alunos", JSON.stringify(alunos));
+
+                    // Limpa o formulário
+                    //document.getElementById("formAluno").reset();
+
+                    // Atualiza a lista de campanhas
+                    //window.location.href = "./";
+                    // Fecha a modal
+                    modalAluno.hide();
+                    // Exibe uma mensagem de sucesso ou algo similar
+                    alert("Cadastro do aluno atualizado com sucesso!");
+                    location.reload();
+            };
+
+        }
+
+        function abrirConteudoAluno(idAluno){
+            const alunos = JSON.parse(localStorage.getItem("alunos"));
+            let aluno = alunos[idAluno];
+            localStorage.setItem('aluno_selecionada', JSON.stringify(aluno));
+            window.location.href = "./detalhes.html";
+        }
+    </script>
+
+
+</body>
+</html>
