@@ -1,0 +1,20 @@
+[
+  {
+    "id":1,
+    "nome": "Alice Souza",    
+    "sobre":"Sou uma pessoa legal",
+    "data_nasc": "2005-09-12",
+    "whatsapp": "11912345678",
+    "img": "https://placehold.co/150x150/000000/FFFFFF/png?text=foto",
+    "hobbies": ["Leitura", "Música"]
+  },
+  {
+    "id":2,
+    "nome": "Bruno Lima",
+    "sobre":"Sou uma pessoa legal",
+    "data_nasc": "2004-02-22",
+    "whatsapp": "2199876-5432",
+    "img": "https://placehold.co/150x150/000000/FFFFFF/png?text=foto",
+    "hobbies": ["Esportes"]
+  }
+]
